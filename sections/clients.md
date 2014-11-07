@@ -83,7 +83,7 @@ Clients are the folks or companies that Bidsketch customers are preparing propos
 
 A successful response will return the new client formatted just like a *Get Client* request with a `201 Created` status.
 
-If unsuccessful, this will return a `422 Unprocessable Entity` status with an array of errors.
+If unsuccessful, this will return a `400 Bad Request` status with an array of errors.
 
 Some plans have limits to the number of clients that can be created. If that limit has been reached, the request will return with a `426 Upgrade Required` status and details about limit.
 
@@ -94,13 +94,13 @@ Some plans have limits to the number of clients that can be created. If that lim
 ```json
 {
   "first_name": "Jimmy",
-  "last_name": "Bond",
+  "last_name": "Bond"
 }
 ```
 
 If successful, this will return `200 OK` along with the updated JSON representation of the client.
 
-If unsuccessful, this will return a `422 Unprocessable Entity` status with an array of errors.
+If unsuccessful, this will return a `400 Bad Request` status with an array of errors.
 
 ## Delete Client
 
