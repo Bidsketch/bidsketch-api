@@ -9,11 +9,14 @@ Your adventure with the Bidsketch API starts at `https://bidsketch.com/api/v1`. 
 curl https://bidsketch.com/api/v1/proposals -H 'Authorization: Token token="yourtoken"'
 ```
 
+## Authentication
+
+`http://imeric.bidsketch.com/account/api_tokens`
+
 ## Format
 
 ## Versioning
 
-## Authentication
 
 ## Rate Limits
 

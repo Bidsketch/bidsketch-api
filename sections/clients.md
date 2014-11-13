@@ -105,4 +105,5 @@ If unsuccessful, this will return a `400 Bad Request` status with an array of er
 ## Delete Client
 
 * `DELETE /clients/1.json` will delete a client and return `204 No Content`
+* Keep in mind this will delete all the Proposals for a client.
 
