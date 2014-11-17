@@ -119,7 +119,8 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
     "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1235.json",
     "name": "Why You Can Trust Biff",
     "sectiontype": "opening",
-    "position": 2
+    "position": 2,
+    "description": "<h2>Biff&quot;s a good guy</h2><p>He&quot;s actually a really good guy.</p>"
   },
   {
     "id": 1231,
@@ -128,7 +129,8 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
     "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1231.json",
     "name": "Who Is This Biff Tannen?",
     "sectiontype": "opening",
-    "position": 1
+    "position": 1,
+    "description": "<p>Biff is an entrepreneur who has been looking after the community for a long time.</p>"
   },
   {
     "id": 1237,
@@ -137,7 +139,8 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
     "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1237.json",
     "name": "Getting Your Car Back",
     "sectiontype": "closing",
-    "position": 1
+    "position": 1,
+    "description": "<p>Getting your car back is actually really simple. All you have to do is pay the pickup fee.</p>"
   },
   {
     "id": 1234,
@@ -146,7 +149,8 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
     "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1234.json",
     "name": "Payment Options",
     "sectiontype": "closing",
-    "position": 2
+    "position": 2,
+    "description": "<p>I only accept cash.</p>"
   }
 ]
 ```
@@ -165,11 +169,11 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
   "sectiontype": "closing",
   "position": 1,
   "proposal": {
-    "id": 11051955
+    "id": 11051955,
     "url": "https://bidsketch.com/api/v1/proposals/11051955.json",
     "app_url": "https://hvactothefuture.bidsketch.com/proposals/11051955"
   },
-  "description": ""
+  "description": "<p>Getting your car back is actually really simple. All you have to do is pay the pickup fee.</p>"
 }
 ```
 
