@@ -5,7 +5,6 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
 ## Get Proposals
 
 * `GET /proposals.json` will return all the proposals for the account
-* `GET /proposals/drafts.json` will return proposals that are still drafts
 
 ```json
 [
@@ -45,32 +44,145 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
   "app_url": "https://hvactothefuture.bidsketch.com/proposals/11051955",
   "created_at": "1985-10-26T01:35:23-08:00",
   "updated_at": "1955-11-05T22:04:17-08:00",
+  "proposal_dat": null,
   "project_name": "HVAC repair for Mayor Wilson's Office.",
   "description": "We have the flux capacity to repair your HVAC system before it ever becomes a problem.",
   "status": "Pending",
   "is_draft": true,
   "user": "Biff Tannen",
+  "settings": {
+    "approval_message": "<p>Thanks!</p>",
+    "hide_monthly_total": false,
+    "optional_fees_note": "Note: Optional items are not included in proposal fees",
+    "hide_project_total": false,
+    "hide_yearly_total": false,
+    "proposal_fees_title": "Fee Summary",
+    "include_optional_fees_in_totals": true,
+    "optional_fees_title": "Optional Items",
+    "hide_grand_total": false
+  },
+  "amount": {
+    "currency": "USD",
+    "tax": 0,
+    "tax2": 0,
+    "monthly_fees": 1940,
+    "yearly_fees": 1100,
+    "one_time_fees": 4345,
+    "discount": 0,
+    "total": 7385
+  },
   "client": {
     "id": 2927538,
     "name": "The Office of Mayor Goldie Wilson",
     "url": "https://bidsketch.com/api/v1/clients/2927538.json",
     "app_url": "https://hvactothefuture.bidsketch.com/clients/2927538"
-  }, 
-  "opening_sections": {
-    "count": 4,
-    "url": "https://bidsketch.com/api/v1/proposals/11051955/opening_sections.json",
-    "app_url": "https://hvactothefuture.bidsketch.com/opening_sections/11051955"
   },
-  "fees": {
-    "count": 3,
-    "url": "https://bidsketch.com/api/v1/proposals/11051955/fees.json",
-    "app_url": "https://hvactothefuture.bidsketch.com/proposal_fees/11051955"
-  },
-  "closing_sections": {
-    "count": 3,
-    "url": "https://bidsketch.com/api/v1/proposals/11051955/closing_sections.json",
-    "app_url": "https://hvactothefuture.bidsketch.com/closing_sections/11051955"
-  },
+  "content": {
+    "count": 11,
+    "url": "http://bidsketch.com/api/v1/proposals/195980/content/195980.json",
+    "opening_sections": {
+      "count": 2,
+      "url": "http://bidsketch.com/api/v1/proposals/195980/sections/opening.json"
+    },
+    "fees": {
+      "count": 8,
+      "url": "http://bidsketch.com/api/v1/proposals/195980/fees.json"
+    },
+    "closing_sections": {
+      "count": 1,
+      "url": "http://bidsketch.com/api/v1/proposals/195980/sections/closing.json"
+    }
+  }
+}
+```
+
+## Get Proposal Content
+
+* `GET /proposals/1/content.json` will get a proposal with all its content
+
+The goal of proposals is to collect a bunch of content into a single document. It can be a bit cumbersome grabbing all that content using the normal RESTful methods, so use this method if you want to display the content all in one go. You'll get the content in two collections: `sections` and `fees`.
+
+Be sure to keep content positioning in mind. Opening sections are grouped together first in the proposal, followed by fees, with closing sections finishing up the proposal. We will be simplifying positioning in the coming months, in a non-breaking way.
+
+```json
+{
+  "id": 195980,
+  "url": "http://bidsketch.com/api/v1/proposals/195980.json",
+  "app_url": "http://hvactothefuture.bidsketch.com/proposal/195980",
+  "content": {
+    "opening_sections": [
+      {
+        "id": 1254193,
+        "url": "http://bidsketch.com/api/v1/proposals/195980/sections/1254193.json",
+        "name": "Testimonials",
+        "description": "<p><em>\"The folks at HVAC to the Future are great!\"</em> - Scott Scottson</p>\n<p><em>\"When it comes to heating and air conditioner repair, those guys aren't chickens about getting the job done.\" </em>- Biff Tannen</p>"
+      },
+      {
+        "id": 1254194,
+        "url": "http://bidsketch.com/api/v1/proposals/195980/sections/1254194.json",
+        "name": "Our Advantage",
+        "description": "<p>We use <strong>science </strong>to our advantage to assess the problems with your HVAC system and go back in time to fix it as reliably as possible, before it becomes a problem.</p>"
+      }
+    ],
+    "fees": [
+      {
+        "id": 620151,
+        "url": "http://bidsketch.com/api/v1/proposals/195980/fees/620151.json",
+        "name": "Time Travel",
+        "optional": false,
+        "feetype": "fixed",
+        "amount": {
+          "unit": null,
+          "details": "$1,210",
+          "currency": "USD",
+          "unit_amount": 1210.0,
+          "quantity": null,
+          "total": 1210.0
+        },
+        "description": "<p>We charge a low flat rate for time travel and materials involved. After all, plutonium is available in every corner store.</p>"
+      },
+      {
+        "id": 620152,
+        "url": "http://bidsketch.com/api/v1/proposals/195980/fees/620152.json",
+        "name": "Repairs",
+        "optional": false,
+        "feetype": "hourly",
+        "amount": {
+          "unit": "Hour",
+          "details": "$1,615 (19 hours @ $85/hour)",
+          "currency": "USD",
+          "unit_amount": 85.0,
+          "quantity": 19,
+          "total": 1615.0
+        },
+        "description": "<p>For Mayor Wilson's Office, we estimate 19 hours of total work, across all timelines. This includes parts and materials.</p>",
+      },
+      {
+        "id": 620153,
+        "url": "http://bidsketch.com/api/v1/proposals/195980/fees/620153.json",
+        "name": "Paradox Protection",
+        "optional": true,
+        "feetype": "fixed",
+        "amount": {
+          "unit": null,
+          "details": "$400",
+          "currency": "USD",
+          "unit_amount": 400.0,
+          "quantity": null,
+          "total": 400.0
+        },
+        "description": "<p>By going back in time to repair your HVAC system, we create a <em>slight </em>time paradox. With the optional Paradox Protection, we take steps to educate and inform your past self to ensure that our work does not interfere with the normal space-time continuum.</p>\n<p>Optional, but highly recommended.</p>"
+      }
+    ],
+    "closing_sections": [
+      {
+        "id": 1254195,
+        "url": "http://bidsketch.com/api/v1/proposals/195980/sections/1254195.json",
+        "name": "Frequently Asked Questions",
+        "description": "<p><em>\"How will I know it worked?\"</em></p>\n<p>Time travel is tricky. We will send you a signed certificate of completion via Western Union right now.</p>\n<p><em>\"While you're in the past, can you...?\"</em></p>\n<p>No.</p>\n<p><em>\"Not even this one favor?\"</em></p>\n<p>No.</p>\n<p><em>\"How does this work?\"</em></p>\n<p>Flux Capacitor.</p>"
+      }
+    ]
+  }
 }
 ```
 
@@ -92,7 +204,7 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
 
 ```json
 {
-  "description": "A wash and two coats of wax for a BMW 733i"
+  "description": "A wash and two coats of wax for a BMW 733i",
 }
 ```
 
@@ -177,19 +289,96 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
 }
 ```
 
-### Create Proposal Section
+### Creating and Updating Proposal Sections
 
-### Update Proposal Section
+* You can create or update proposal sections using the create or update method for `Proposals`
 
 ### Delete Proposal Section
 
+* `DELETE /proposals/1/sections/1.json` will delete a single proposal section and return `204 No Content` if successful.
+
 ## Proposal Fees
+
+Proposal Fees are a special type of content that contain information about costs associated with specific services.
 
 ### Get Proposal Fees
 
+* `GET /proposals/1/fees` will list all the fees for a proposal
+
+```json
+[
+  {
+    "id": 620151,
+    "url": "http://bidsketch.com/api/v1/proposals/195980/fees/620151.json",
+    "name": "Time Travel",
+    "created_at": "2014-11-18T10:25:57-05:00",
+    "updated_at": "2014-12-17T15:25:05-05:00",
+    "total": 1210.0,
+    "optional": false,
+    "feetype": "fixed",
+  },
+  {
+    "id": 620152,
+    "url": "http://bidsketch.com/api/v1/proposals/195980/fees/620152.json",
+    "name": "Repairs",
+    "created_at": "2014-11-18T10:30:28-05:00",
+    "updated_at": "2014-12-17T15:25:05-05:00",
+    "total": 1615.0,
+    "optional": false,
+    "feetype": "hourly"
+  },
+  {
+    "id": 620153,
+    "url": "http://bidsketch.com/api/v1/proposals/195980/fees/620153.json",
+    "name": "Paradox Protection",
+    "created_at": "2014-11-18T10:37:16-05:00",
+    "updated_at": "2014-12-17T15:25:05-05:00",
+    "total": 400.0,
+    "optional": true,
+    "feetype": "fixed"
+  }
+]
+```
+
 ### Get Proposal Fee
 
+* `GET /proposals/1/fees/1.json` to get a single fee for a proposal
+
+```json
+{
+  "id": 620151,
+  "url": "http://bidsketch.com/api/v1/proposals/195980/fees/620151.json",
+  "name": "Time Travel",
+  "updated_at": "2014-12-17T15:25:05-05:00",
+  "created_at": "2014-11-18T10:25:57-05:00",
+  "feetype": "fixed",
+  "optional": false,
+  "amount": {
+    "currency": "USD",
+    "total": 1210.0,
+    "unit_amount": 1210.0,
+    "details": "$1,210",
+    "quantity": null,
+    "unit": null
+  },
+  "description": "<p>We charge a low flat rate for time travel and materials involved. After all, plutonium is available in every corner store.</p>",
+}
+```
+
 ### Create Proposal Fee
+
+* `POST /proposals/1/fees.json` will create a proposal fee with the provided data
+
+```json
+{
+  "name": "Handsome Surcharge",
+  "feetype": "hourly",
+  "optional": false,
+  "amount": {
+    "total": 
+  }
+}
+```
 
 ### Update Proposal Fee
 

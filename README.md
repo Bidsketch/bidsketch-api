@@ -13,10 +13,7 @@ curl https://bidsketch.com/api/v1/proposals -H 'Authorization: Token token="your
 
 `http://imeric.bidsketch.com/account/api_tokens`
 
-## Format
-
 ## Versioning
-
 
 ## Rate Limits
 
