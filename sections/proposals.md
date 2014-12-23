@@ -50,6 +50,14 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
   "status": "Pending",
   "is_draft": true,
   "user": "Biff Tannen",
+  "currency": "USD",
+  "tax": 0,
+  "tax2": 0,
+  "monthly_fees": 1940,
+  "yearly_fees": 1100,
+  "one_time_fees": 4345,
+  "discount": 0,
+  "total": 7385,
   "settings": {
     "approval_message": "<p>Thanks!</p>",
     "hide_monthly_total": false,
@@ -60,16 +68,6 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
     "include_optional_fees_in_totals": true,
     "optional_fees_title": "Optional Items",
     "hide_grand_total": false
-  },
-  "amount": {
-    "currency": "USD",
-    "tax": 0,
-    "tax2": 0,
-    "monthly_fees": 1940,
-    "yearly_fees": 1100,
-    "one_time_fees": 4345,
-    "discount": 0,
-    "total": 7385
   },
   "client": {
     "id": 2927538,
@@ -131,14 +129,12 @@ Be sure to keep content positioning in mind. Opening sections are grouped togeth
         "name": "Time Travel",
         "optional": false,
         "feetype": "fixed",
-        "amount": {
-          "unit": null,
-          "details": "$1,210",
-          "currency": "USD",
-          "unit_amount": 1210.0,
-          "quantity": null,
-          "total": 1210.0
-        },
+        "unit": null,
+        "details": "$1,210",
+        "currency": "USD",
+        "amount": 1210.0,
+        "quantity": null,
+        "total": 1210.0,
         "description": "<p>We charge a low flat rate for time travel and materials involved. After all, plutonium is available in every corner store.</p>"
       },
       {
@@ -147,14 +143,12 @@ Be sure to keep content positioning in mind. Opening sections are grouped togeth
         "name": "Repairs",
         "optional": false,
         "feetype": "hourly",
-        "amount": {
-          "unit": "Hour",
-          "details": "$1,615 (19 hours @ $85/hour)",
-          "currency": "USD",
-          "unit_amount": 85.0,
-          "quantity": 19,
-          "total": 1615.0
-        },
+        "unit": "Hour",
+        "details": "$1,615 (19 hours @ $85/hour)",
+        "currency": "USD",
+        "amount": 85.0,
+        "quantity": 19,
+        "total": 1615.0,
         "description": "<p>For Mayor Wilson's Office, we estimate 19 hours of total work, across all timelines. This includes parts and materials.</p>",
       },
       {
@@ -163,14 +157,12 @@ Be sure to keep content positioning in mind. Opening sections are grouped togeth
         "name": "Paradox Protection",
         "optional": true,
         "feetype": "fixed",
-        "amount": {
-          "unit": null,
-          "details": "$400",
-          "currency": "USD",
-          "unit_amount": 400.0,
-          "quantity": null,
-          "total": 400.0
-        },
+        "unit": null,
+        "details": "$400",
+        "currency": "USD",
+        "amount": 400.0,
+        "quantity": null,
+        "total": 400.0,
         "description": "<p>By going back in time to repair your HVAC system, we create a <em>slight </em>time paradox. With the optional Paradox Protection, we take steps to educate and inform your past self to ensure that our work does not interfere with the normal space-time continuum.</p>\n<p>Optional, but highly recommended.</p>"
       }
     ],
@@ -353,14 +345,12 @@ Proposal Fees are a special type of content that contain information about costs
   "created_at": "2014-11-18T10:25:57-05:00",
   "feetype": "fixed",
   "optional": false,
-  "amount": {
-    "currency": "USD",
-    "total": 1210.0,
-    "unit_amount": 1210.0,
-    "details": "$1,210",
-    "quantity": null,
-    "unit": null
-  },
+  "currency": "USD",
+  "total": 1210.0,
+  "unit_amount": 1210.0,
+  "details": "$1,210",
+  "quantity": null,
+  "unit": null,
   "description": "<p>We charge a low flat rate for time travel and materials involved. After all, plutonium is available in every corner store.</p>",
 }
 ```
@@ -371,18 +361,31 @@ Proposal Fees are a special type of content that contain information about costs
 
 ```json
 {
-  "name": "Handsome Surcharge",
+  "name": "Labor",
   "feetype": "hourly",
   "optional": false,
-  "amount": {
-    "total": 
-  }
+  "amount": 50,
+  "quantity": 4,
+  "description": "<p>We are not working for free.</p>"
 }
 ```
 
 ### Update Proposal Fee
 
+* `PUT /proposals/1/fees/1.json` will update a proposal fee with the provided data
+
+```json
+{
+  "feetype": "custom",
+  "amount": 8000,
+  "quantity": 4,
+  "unit": "Plutonium Stick"
+}
+```
+
 ### Delete Proposal Fee
+
+* `DELETE /proposals/1/fees/1.json` will delete that proposal fee
 
 ## Proposal Comments
 
