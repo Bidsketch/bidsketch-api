@@ -222,9 +222,7 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
     "updated_at": "1955-11-05T22:04:17-08:00",
     "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1235.json",
     "name": "Why You Can Trust Biff",
-    "sectiontype": "opening",
-    "position": 2,
-    "description": "<h2>Biff&quot;s a good guy</h2><p>He&quot;s actually a really good guy.</p>"
+    "sectiontype": "opening"
   },
   {
     "id": 1231,
@@ -232,9 +230,7 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
     "updated_at": "1955-11-05T22:04:17-08:00",
     "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1231.json",
     "name": "Who Is This Biff Tannen?",
-    "sectiontype": "opening",
-    "position": 1,
-    "description": "<p>Biff is an entrepreneur who has been looking after the community for a long time.</p>"
+    "sectiontype": "opening"
   },
   {
     "id": 1237,
@@ -242,9 +238,7 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
     "updated_at": "1955-11-05T22:04:17-08:00",
     "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1237.json",
     "name": "Getting Your Car Back",
-    "sectiontype": "closing",
-    "position": 1,
-    "description": "<p>Getting your car back is actually really simple. All you have to do is pay the pickup fee.</p>"
+    "sectiontype": "closing"
   },
   {
     "id": 1234,
@@ -252,9 +246,7 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
     "updated_at": "1955-11-05T22:04:17-08:00",
     "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1234.json",
     "name": "Payment Options",
-    "sectiontype": "closing",
-    "position": 2,
-    "description": "<p>I only accept cash.</p>"
+    "sectiontype": "closing"
   }
 ]
 ```
@@ -271,23 +263,35 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
   "url": "https://bidsketch.com/api/v1/proposals/11051955/sections/1237.json",
   "name": "Getting Your Car Back",
   "sectiontype": "closing",
-  "position": 1,
-  "proposal": {
-    "id": 11051955,
-    "url": "https://bidsketch.com/api/v1/proposals/11051955.json",
-    "app_url": "https://hvactothefuture.bidsketch.com/proposals/11051955"
-  },
   "description": "<p>Getting your car back is actually really simple. All you have to do is pay the pickup fee.</p>"
 }
 ```
 
-### Creating and Updating Proposal Sections
+### Create Proposal Section
 
-* You can create or update proposal sections using the create or update method for `Proposals`
+* `POST /proposals/1/sections.json` will create a proposal section with the provided data
+
+```json
+{
+  "name": "Our Disadvantage",
+  "sectiontype": "opening",
+  "description": "<p>We use <strong>science </strong>to our advantage to assess the problems with your HVAC system and go back in time to fix it as reliably as possible, before it becomes a problem.</p>"
+}
+```
+
+### Update Proposal Section
+
+* `PUT /proposals/1/sections/1.json` will update a proposal section with the provided data
+
+```json
+{
+  "name": "Updated Name"
+}
+```
 
 ### Delete Proposal Section
 
-* `DELETE /proposals/1/sections/1.json` will delete a single proposal section and return `204 No Content` if successful.
+* `DELETE /proposals/1/sections/1.json` will delete that proposal section
 
 ## Proposal Fees
 
@@ -386,15 +390,3 @@ Proposal Fees are a special type of content that contain information about costs
 ### Delete Proposal Fee
 
 * `DELETE /proposals/1/fees/1.json` will delete that proposal fee
-
-## Proposal Comments
-
-### Get Proposal Comments
-
-### Get Proposal Comment
-
-### Create Proposal Comment
-
-### Update Proposal Comment
-
-### Delete Proposal Comment
