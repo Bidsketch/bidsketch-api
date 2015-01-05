@@ -4,7 +4,7 @@ Bidsketch users can save fees to their account to be reused in future proposals.
 
 ## Get Fees
 
-* `GET /fees` will list all the fees saved to the account
+* `GET /fees.json` will list all the fees saved to the account
 
 ```json
 [
