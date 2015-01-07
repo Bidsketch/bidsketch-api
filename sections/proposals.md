@@ -14,7 +14,7 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
     "app_url": "https://hvactothefuture.bidsketch.com/proposals/11051955",
     "created_at": "1985-10-26T01:35:23-08:00",
     "updated_at": "1955-11-05T22:04:17-08:00",
-    "project_name": "HVAC repair for Mayor Wilson's Office.",
+    "name": "HVAC repair for Mayor Wilson's Office.",
     "description": "We have the flux capacity to repair your HVAC system before it ever becomes a problem.",
     "status": "Pending",
     "is_draft": true
@@ -25,7 +25,7 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
     "app_url": "https://hvactothefuture.bidsketch.com/proposals/10212015",
     "created_at": "1985-10-25T11:35:23-08:00",
     "updated_at": "2015-10-21T13:04:17-08:00",
-    "project_name": "HVAC repair for Mayor Wilson Jr.'s Office.",
+    "name": "HVAC repair for Mayor Wilson Jr.'s Office.",
     "description": "We have the flux capacity to repair your HVAC system before it ever becomes a problem.",
     "status": "Accepted",
     "is_draft": false
@@ -45,7 +45,7 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
   "created_at": "1985-10-26T01:35:23-08:00",
   "updated_at": "1955-11-05T22:04:17-08:00",
   "proposal_dat": null,
-  "project_name": "HVAC repair for Mayor Wilson's Office.",
+  "name": "HVAC repair for Mayor Wilson's Office.",
   "description": "We have the flux capacity to repair your HVAC system before it ever becomes a problem.",
   "status": "Pending",
   "is_draft": true,
@@ -184,7 +184,7 @@ Be sure to keep content positioning in mind. Opening sections are grouped togeth
 
 ```json
 {
-  "project_name": "Auto Detailing for Mr. McFly",
+  "name": "Auto Detailing for Mr. McFly",
   "description": "A wash and a coat of wax for a BMW 733i",
   "client_id": 163452
 }
