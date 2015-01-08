@@ -69,6 +69,37 @@ Clients are the folks or companies that Bidsketch customers are preparing propos
 }
 ```
 
+## Get Client Proposals
+
+* `GET /client/1/proposals.json` will get a collection of all the proposals for a single client
+
+```json
+[
+  {
+    "id": 11051955,
+    "url": "https://bidsketch.com/api/v1/proposals/11051955.json",
+    "app_url": "https://hvactothefuture.bidsketch.com/proposals/11051955",
+    "created_at": "1985-10-26T01:35:23-08:00",
+    "updated_at": "1955-11-05T22:04:17-08:00",
+    "name": "HVAC repair for Mayor Wilson's Office.",
+    "description": "We have the flux capacity to repair your HVAC system before it ever becomes a problem.",
+    "status": "Pending",
+    "is_draft": true
+  },
+  {
+    "id": 10212015,
+    "url": "https://bidsketch.com/api/v1/proposals/10212015.json",
+    "app_url": "https://hvactothefuture.bidsketch.com/proposals/10212015",
+    "created_at": "1985-10-25T11:35:23-08:00",
+    "updated_at": "2015-10-21T13:04:17-08:00",
+    "name": "HVAC repair for Mayor Wilson Jr.'s Office.",
+    "description": "We have the flux capacity to repair your HVAC system before it ever becomes a problem.",
+    "status": "Accepted",
+    "is_draft": false
+  }
+]
+```
+
 ## Create Client
 
 * `POST /clients.json` will create a client using the provided data.

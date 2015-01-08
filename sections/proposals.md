@@ -5,6 +5,7 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
 ## Get Proposals
 
 * `GET /proposals.json` will return all the proposals for the account
+* `GET /clients/1/proposals.json` will return the proposals for a single client
 
 ```json
 [
