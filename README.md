@@ -11,7 +11,7 @@ curl https://bidsketch.com/api/v1/proposals -H 'Authorization: Token token="your
 
 ## Authentication
 
-We use HTTP token authentication to identify and authorize accounts for the API. All you need to do as a developer is ask our users to get their api token and pass it along in an authorization header.
+We use HTTP token authentication to identify and authorize accounts for the API. All you need to do as a developer is ask Bidsketch users to get their api token and pass it along in an authorization header.
 
 ```
 Authorization: Token token="abc123abc123abc123abc123abc123"
@@ -35,13 +35,14 @@ We limit requests for each token to **100 requests in 20 seconds**.
 | 204  | No Content | Successful `DELETE` requests |
 | 400  | Bad Request | No API token was provided |
 | 401  | Unauthorized | Revoked or Invalid API token |
-| 404  | Not Found | Can't find the API resource you asked for |
-| 422  | Unprocessible Entity | Invalid data when creating or updating |
+| 404  | Not Found | Can't find the API resource or URL you asked for |
+| 422  | Unprocessable Entity | Invalid data when creating or updating |
 | 426  | Upgrade Required | The account has hit a client or proposal limit |
+| 500  | Internal Server Error | Something went very, very wrong |
 
 ### Errors
 
-Whenever you get a **`422 Unprocessible Entity`** code, it'll have a json-formatted array of errors for what went wrong:
+Whenever you get a **`422 Unprocessable Entity`** code, it'll have a json-formatted array of errors for what went wrong:
 
 ```json
 {

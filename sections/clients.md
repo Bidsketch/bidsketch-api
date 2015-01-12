@@ -37,7 +37,7 @@ Clients are the folks or companies that Bidsketch customers are preparing propos
 
 ## Get Client
 
-* `GET /client/1.json` will get the client whose `id` is 1
+* `GET /clients/1.json` will get the client whose `id` is 1
 
 ```json
 {
@@ -71,7 +71,7 @@ Clients are the folks or companies that Bidsketch customers are preparing propos
 
 ## Get Client Proposals
 
-* `GET /client/1/proposals.json` will get a collection of all the proposals for a single client
+* `GET /clients/1/proposals.json` will get a collection of all the proposals for a single client
 
 ```json
 [

@@ -45,7 +45,7 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
   "app_url": "https://hvactothefuture.bidsketch.com/proposals/11051955",
   "created_at": "1985-10-26T01:35:23-08:00",
   "updated_at": "1955-11-05T22:04:17-08:00",
-  "proposal_dat": null,
+  "proposal_date": null,
   "name": "HVAC repair for Mayor Wilson's Office.",
   "description": "We have the flux capacity to repair your HVAC system before it ever becomes a problem.",
   "status": "Pending",
