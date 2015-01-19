@@ -4,12 +4,12 @@ Clients are the folks or companies that Bidsketch customers are preparing propos
 
 ## Client Data
 
-Required attributes are **bold**.  
-Attributes that can be set using `create` and `update` are marked with an asterisk(*)
+* Required attributes are **bold**.  
+* Attributes that can be set using `create` and `update` are marked with an asterisk(*)
 
 Attribute | Type | Info | Example
 --------- | ---- | ---- | -------
-`id` | integer | The unique id for the client | 4815162342
+`id` | integer | The unique id for the client | `4815162342`
 `url` | string | The API url for the client | `https://bidsketch.com/api/v1/clients/4815162342.json`
 `app_url` | string | The Bidsketch app url for the client | `https://ericsgazebos.bidsketch.com/clients/4815162342`
 `created_at` | datetime | When the client was created | `2014-04-08T15:16:23-05:00`
