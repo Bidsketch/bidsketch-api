@@ -2,6 +2,38 @@
 
 Clients are the folks or companies that Bidsketch customers are preparing proposals for.
 
+## Client Data
+
+Required attributes are **bold**.  
+Attributes that can be set using `create` and `update` are marked with an asterisk(*)
+
+Attribute | Type | Info | Example
+--------- | ---- | ---- | -------
+`id` | integer | The unique id for the client | 4815162342
+`url` | string | The API url for the client | `https://bidsketch.com/api/v1/clients/4815162342.json`
+`app_url` | string | The Bidsketch app url for the client | `https://ericsgazebos.bidsketch.com/clients/4815162342`
+`created_at` | datetime | When the client was created | `2014-04-08T15:16:23-05:00`
+`updated_at` | datetime | When the client was last updated | `2014-05-12T12:45:01-05:00`
+**`first_name*`** | string | The client's first name if they are a person | `Eric`
+**`last_name*`** | string | The client's last name if they are a person | `Steele`
+`name*` | string | The client's full name or company name | `Eric's Gazebo Emporium`
+`phone*` | string | The client's primary phone number | `481-516-2342`
+**`email*`** | string | The client's primary email address | `eric@bidsketch.com`
+`alt_phone*` | string | The client's alternate phone number | `1-800-GAZEBOS`
+`website*` | string | The client's website | `ericsgazeboemporium.com`
+`address_field_one*` | string | The first field in a client's address | `1 Gazebo Way`
+`address_field_two*` | string | The second field in a client's address | `Gazebo Suite`
+`city*` | string | The city in a client's address | `Philadelphia`
+`state*` | string | The state in a client's address | `PA`
+`postal_zip*` | string | The postal code for a client's address | `19106`
+`country*` | string | The country in a client's address | `USA`
+`notes*` | text | Notes about the client. Will return with quotes escaped, but **does not need to be submitted escaped**. | `Calls himself \"The King of Gazebos\"`
+`other_contact{}*` | hash | A hash containing secondary contact information | _Values nested below_. The hash itself is optional, but if provided, **bolded** attributes are required.
+`> phone*` | string | A phone number for a client's secondary contact | `867-5309`
+**`> first_name*`** | string | A secondary contact's first name | `Jenny`
+**`> last_name*`** | string | A secondary contact's last name | `Tutone`
+**`> email*`** | string | A secondary contact's email address | `jenny@bidsketch.com`
+
 ## Get Clients
 
 * `GET /clients.json` will return all the clients on the account
