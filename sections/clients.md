@@ -5,6 +5,7 @@ Clients are the folks or companies that Bidsketch customers are preparing propos
 ## Client Data
 
 * Required attributes are **bold**.  
+* Attributes required under certain conditions are _italic_.
 * Attributes that can be set using `create` and `update` are marked with an asterisk(*)
 * Nested attributes are indented below their parent with `>`
 
@@ -24,10 +25,10 @@ Attribute | Type | Info | Example
 `postal_zip*` | string | The postal code for a client's address | `19106`
 `country*` | string | The country in a client's address | `USA`
 `notes*` | text | Notes about the client. Will return with quotes escaped, but **does not need to be submitted escaped**. | `Calls himself \"The King of Gazebos\"`
-`other_contact{}*` | hash | A hash containing secondary contact information | _Values nested below_. The hash itself is optional, but if provided, **bolded** attributes are required.
-**`> first_name*`** | string | A secondary contact's first name | `Jenny`
-**`> last_name*`** | string | A secondary contact's last name | `Tutone`
-**`> email*`** | string | A secondary contact's email address | `jenny@bidsketch.com`
+`other_contact{}*` | hash | A hash containing secondary contact information | The hash itself is optional, but if provided, `first_name`, `last_name`, and `email` are required.
+_`> first_name*`_ | string | A secondary contact's first name | `Jenny`
+_`> last_name*`_ | string | A secondary contact's last name | `Tutone`
+_`> email*`_ | string | A secondary contact's email address | `jenny@bidsketch.com`
 `> phone*` | string | A phone number for a client's secondary contact | `867-5309`
 `id` | integer | The unique id for the client | `4815162342`
 `url` | string | The API url for the client | `https://bidsketch.com/api/v1/clients/4815162342.json`
