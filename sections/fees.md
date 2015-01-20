@@ -12,7 +12,7 @@ Attribute | Type | Info | Example
 --------- | ---- | ---- | -------
 **`name*`** | string | The name of a fee | `Repairs`
 **`amount*`** | float | The amount of a fee. For fixed fees, this is a total. For calculated fees, this is the amount per unit. | `85.0`
-**`feetype*`** | string | Specifies the type of fee. **Must be one of `fixed`, `hourly`, `monthly`, `yearly`, or `custom`** | `hourly`
+**`feetype*`** | string | Specifies the type of fee. **Must be one of `fixed`, `hourly`, `monthly`, `yearly`, or `custom`** | `hourly`, `monthly`, `yearly`, `fixed`, or `custom`
 _`unit*`_ | string | The unit used when labeling custom fees. Only settable with `custom` fees. Will be `Hour` for `hourly`, `Month` for `monthly`, and `Year` for `yearly`. | `Hour`
 `quantity*` | integer | The quantity used for calculated fees. | `19`
 `category*` | string | A fee category to group fees together. Can be any string. | `HVAC Repair`
