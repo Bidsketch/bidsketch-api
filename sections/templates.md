@@ -17,7 +17,7 @@ Attribute | Type | Info | Example
 `app_url` | string | The Bidsketch app url for the template | `http://hvactothefuture.bidsketch.com/proposaltemplates/112683/edit`
 `sections[]` | array | A collection of sections associated with the template | An array of section objects
 `> url` | string | The API url for the section | `http://bidsketch.com/api/v1/sections/450451.json`
-`> id` | integer | The unique id for the section | 450451
+`> id` | integer | The unique id for the section | `450451`
 `> name` | string | A name for the section | `Frequently Asked Questions`
 `> app_url` | string | The Bidsketch app url for the section | `http://hvactothefuture.bidsketch.com/sections/450451`
 `> sectiontype` | string | Specifies where the section will appear in a proposal. Must be either `opening` or `closing` | `opening` OR `closing`

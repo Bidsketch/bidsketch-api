@@ -2,6 +2,63 @@
 
 Proposals are the bread and butter of Bidsketch. They are a collection of two different types of content: `Fees` and `Sections`. Proposals are owned by a single `User`, and meant for a single `Client`. 
 
+## Proposal Data
+
+* Required attributes are **bold**.  
+* Attributes required under certain conditions are _italic_.
+* Attributes that can be set using `create` and `update` are marked with an asterisk(*)
+* Nested attributes are indented below their parent with `>`
+
+Attribute | Type | Info | Example
+--------- | ---- | ---- | -------
+**`name*`** | string | The proposal's name | `HVAC repair for Mayor Wilson's Office.`
+**`client_id*`** | integer | The id for this proposal's client. **Note: This is returned in the client hash, but needs to be passed as `client_id` when creating or updating a proposal.**| `11051955`
+`currency*` | string | An [ISO currency code](http://en.wikipedia.org/wiki/ISO_4217) that represents the proposal currency | `USD`
+`description*` | text | A summary of the proposal | `We have the flux capacity to repair your HVAC system before it ever becomes a problem.`
+`proposal_date*` | datetime or string | An optional attribute to set a specific date for the proposal. Returns a datetime string, but accepts '11/5/1955' when being set | October 26th, 1985 would be read as `1985-10-26T00:00:00-05:00` and set using `10/26/1985`
+`tax*` | decimal | When reading, this value is the calculated tax amount. When setting, this should be a decimal that represents a percent. | a 10% tax would be read as `39.39` reading and set using `0.1`
+`tax2*` | decimal | When reading, this value is the calculated secondary tax amount. When setting, this should be a decimal that represents a percent. | a 10% tax would be read as `39.39` reading and set using `0.1`
+`discount*` | decimal | When reading, this value is the calculated discount amount. When setting, this should be a decimal that represents a percent. | a 10% discount would be read as `-39.39` reading and set using `0.1`
+`settings*` | hash | A collection of proposal settings |
+`> approval_message*` | html | The message sent to a client upon approval | `<p>Thanks!</p>`
+`> optional_fees_note*` | string | A note displayed by optional items | `Note: Optional items are not included in proposal fees`
+`> optional_fees_title*` | string | The heading used for the Optional Fee group | `Optional Items`
+`> proposal_fees_title*` | string | The heading used for the Fee group | `Fee Summary`
+`> include_optional_fees_in_totals*` | boolean | Should optional fees be included in totals? | `true`
+`> hide_monthly_total*` | boolean | Should the monthly subtotal be hidden on the proposal? | `false`
+`> hide_project_total*` | boolean | Should the project total be hidden on the proposal? | `false`
+`> hide_yearly_total*` | boolean | Should the yearly subtotal be hidden on the proposal? | `false`
+`> hide_grand_total*` | boolean | Should the grand total be hidden on the proposal? | `false`
+`id` | integer | The unique id for the proposal | `11051955`
+`url` | string | The API url for the proposal | `https://bidsketch.com/api/v1/proposals/11051955.json`
+`app_url` | string | The Bidsketch app url for the proposal | `https://hvactothefuture.bidsketch.com/proposals/11051955`
+`created_at` | datetime | When the proposal was created | `1985-10-26T01:35:23-08:00`
+`updated_at` | datetime | When the proposal was last updated | `1955-11-05T22:04:17-08:00`
+`status` | string | One of `Pending`, `Viewed`, `Accepted` or `Declined` | `Pending`
+`is_draft` | boolean | Is the proposal a draft, or is it ready to be sent? | `true`
+`user` | string | The name of the User who owns this proposal | `Biff Tannen`
+`monthly_fees` | integer | The calculated monthly fee subtotal| `1940`
+`yearly_fees` | integer | The calculated yearly fee subtotal | `1100`
+`one_time_fees` | integer | The calculated fixed fee subtotal | `4345`
+`total` | integer | The calculated proposal fee total | `7385`
+`client` | hash | A collection of information about the proposal's client | {
+`> id` | integer | The unique id for the proposal's client. Set using `client_id` | `2927538`
+`> name` | string | The company or full name of the proposal's client | `The Office of Mayor Goldie Wilson`
+`> url` | string | The API url for the proposal's client | `https://bidsketch.com/api/v1/clients/2927538.json`
+`> app_url` | string | The Bidsketch app url for the proposal's client | `https://hvactothefuture.bidsketch.com/clients/2927538`
+`content` | hash | A collection of information about the proposal's content | 
+`> count` | integer | The number of the proposal's sections and fees  | `11`
+`> url` | string | The API url for the proposal's content | `http://bidsketch.com/api/v1/proposals/195980/content/195980.json`
+`> opening_sections` | hash | A collection of information about the proposal's opening sections | 
+`>> count` | integer | The number of the proposal's opening sections | `2`
+`>> url` | string | The API url to get the proposal's opening sections | `http://bidsketch.com/api/v1/proposals/195980/sections/opening.json`
+`> fees` | hash | A collection of information about the proposal's fees | 
+`>> count` | integer | The number of the proposal's fees | `8`
+`>> url` | string | The API url to get the proposal's fees | `http://bidsketch.com/api/v1/proposals/195980/fees.json`
+`> closing_sections` | hash | A collection of information about the proposal's closing sections |
+`>> count` | integer | The number of the proposal's closing sections | `1`
+`>> url` | string | The API url to get the proposal's closing sections | `http://bidsketch.com/api/v1/proposals/195980/sections/closing.json`
+
 ## Get Proposals
 
 * `GET /proposals.json` will return all the proposals for the account
@@ -96,6 +153,8 @@ Proposals are the bread and butter of Bidsketch. They are a collection of two di
 ```
 
 ## Get Proposal Content
+
+### Proposal Content Data
 
 * `GET /proposals/1/content.json` will get a proposal with all its content
 
