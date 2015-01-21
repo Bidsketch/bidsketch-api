@@ -248,6 +248,15 @@ Be sure to keep content positioning in mind. Opening sections are grouped togeth
 }
 ```
 
+### How to Create a Proposal
+
+The process of creating a fresh proposal with content through the API looks a little something like this:
+
+1. Create a proposal with `POST /proposals.json` using at least a valid `name`, `description`, and `client_id`.
+2. Create each proposal opening section with `POST /proposals/[the new proposal id]/sections.json` using at least a valid `name`, `description`, and "opening" `sectiontype`
+3. Create each proposal fee with `POST /proposals/[new proposal id]/fees.json` using at least a valid `name`, `description`, `feetype`, and `amount`
+4. Create each proposal closing section with `POST /proposals/[the new proposal id]/sections.json` using at least a valid `name`, `description`, and "closing" `sectiontype`
+
 ## Update Proposal
 
 * `PUT /proposals/1.json` will update a specific proposal with the provided data
