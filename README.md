@@ -53,4 +53,6 @@ Whenever you get a **`422 Unprocessable Entity`** code, it'll have a json-format
   ]
 }
 ```
+## Libraries and Contributing
 
+This API is pretty new, so we don't have any libraries available just yet. As they become available, we'll link them them here. If you've written a library for the Bidsketch API and would like to contribute, let us know at [info@bidsketch.com](mailto:info@bidsketch.com)!
