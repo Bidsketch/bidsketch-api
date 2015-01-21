@@ -154,8 +154,6 @@ Attribute | Type | Info | Example
 
 ## Get Proposal Content
 
-### Proposal Content Data
-
 * `GET /proposals/1/content.json` will get a proposal with all its content
 
 The goal of proposals is to collect a bunch of content into a single document. It can be a bit cumbersome grabbing all that content using the normal RESTful methods, so use this method if you want to display the content all in one go. You'll get the content in two collections: `sections` and `fees`.
@@ -268,6 +266,10 @@ Be sure to keep content positioning in mind. Opening sections are grouped togeth
 
 Proposal sections come in two flavors: `opening` and `closing`. Opening sections are presented first in a proposal, and closing sections are presented last. Not to be confused with top-level `Sections`, which are reusable section templates, proposal sections are unique to their proposal. When a `Proposal` is deleted, its sections are also deleted.
 
+### Proposal Section Data
+
+Proposal Section Data is the same as [Section Data](/sections/sections.md#section-data)
+
 ### Get Proposal Sections
 
 * `GET /proposals/1/sections.json` will get a collection of sections for a proposal
@@ -356,6 +358,10 @@ Proposal sections come in two flavors: `opening` and `closing`. Opening sections
 ## Proposal Fees
 
 Proposal Fees are a special type of content that contain information about costs associated with specific services.
+
+### Proposal Fee Data
+
+Proposal Fee Data is the same as [Fee Data](/sections/fees.md#fee-data), with the addition of an **`optional*`** boolean flag.
 
 ### Get Proposal Fees
 
