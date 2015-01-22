@@ -53,6 +53,15 @@ Whenever you get a **`422 Unprocessable Entity`** code, it'll have a json-format
   ]
 }
 ```
+
+## Pagination
+
+By default, we paginate collections and limit them to 100 objects per request. You can request specific pages by appending a `page` parameter to the URL. You can
+
+* `GET /clients.json?page=3` would get the 201st to 300th clients
+* `GET /proposals.json?per_page=2` would get the first two proposals
+* `GET /sections.json?page=8&per_page=1` would get a collection of only the eighth section
+
 ## Libraries and Contributing
 
 This API is pretty new, so we don't have any libraries available just yet. As they become available, we'll link them them here. If you've written a library for the Bidsketch API and would like to contribute, let us know at [info@bidsketch.com](mailto:info@bidsketch.com)!
