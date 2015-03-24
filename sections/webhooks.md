@@ -6,7 +6,7 @@ We make webhook notifications available for important events in the Bidsketch ap
 * You need to respond with a `200 OK` HTTP response.
 * If we don't receive a `200 OK` response, we will retry 20 times.
 * After 20 attempts, we email the Bidsketch account admin that something is wrong with the notification.
-* If a resonse is `410 Gone` then we delete the webhook.
+* If a response is `410 Gone` then we delete the webhook.
 
 ## Webhook Events
 
