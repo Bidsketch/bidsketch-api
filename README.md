@@ -1,6 +1,12 @@
 How to Make Friends and Use the Bidsketch API
 =============
 
+## Get an API token
+
+To get started with the API you'll want to get an api token. 
+
+You can see how to get an API token here: [http://help.bidsketch.com/article/76-using-the-bidsketch-api](http://help.bidsketch.com/article/76-using-the-bidsketch-api)
+
 ## Making a request
 
 Your adventure with the Bidsketch API starts at `https://bidsketch.com/api/v1`. This is the beginning of every end point. 
@@ -64,4 +70,4 @@ By default, we paginate collections and limit them to 100 objects per request. Y
 
 ## Libraries and Contributing
 
-This API is pretty new, so we don't have any libraries available just yet. As they become available, we'll link them them here. If you've written a library for the Bidsketch API and would like to contribute, let us know at [info@bidsketch.com](mailto:info@bidsketch.com)!
+This API is pretty new, so we don't have any libraries available just yet. As they become available, we'll link them them here. If you've written a library for the Bidsketch API and would like to contribute, let us know at [support@bidsketch.com](mailto:support@bidsketch.com)!
