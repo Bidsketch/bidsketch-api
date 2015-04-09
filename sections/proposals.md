@@ -239,6 +239,7 @@ Be sure to keep content positioning in mind. Opening sections are grouped togeth
 ## Create Proposal
 
 * `POST /proposals.json` will create a proposal with the provided data
+* `POST /templates/1/proposals.json` will create a proposal using an existing template with the provided data
 
 ```json
 {
@@ -248,7 +249,7 @@ Be sure to keep content positioning in mind. Opening sections are grouped togeth
 }
 ```
 
-### How to Create a Proposal
+### How to Create a Proposal from Scratch
 
 The process of creating a fresh proposal with content through the API looks a little something like this:
 
@@ -256,6 +257,15 @@ The process of creating a fresh proposal with content through the API looks a li
 2. Create each proposal opening section with `POST /proposals/[the new proposal id]/sections.json` using at least a valid `name`, `description`, and "opening" `sectiontype`
 3. Create each proposal fee with `POST /proposals/[new proposal id]/fees.json` using at least a valid `name`, `description`, `feetype`, and `amount`
 4. Create each proposal closing section with `POST /proposals/[the new proposal id]/sections.json` using at least a valid `name`, `description`, and "closing" `sectiontype`
+
+### How to Create a Proposal from a Template
+
+You can also create a proposal from an existing template that will create proposal sections and proposal fees using the template
+
+1. Create a proposal with `POST /templates/[the template id]/proposals.json` using at least a valid `name`, `description`, and `client_id`.
+2. Create more proposal opening sections with `POST /proposals/[the new proposal id]/sections.json` using at least a valid `name`, `description`, and "opening" `sectiontype`
+3. Create more proposal fees with `POST /proposals/[new proposal id]/fees.json` using at least a valid `name`, `description`, `feetype`, and `amount`
+4. Create more proposal closing sections with `POST /proposals/[the new proposal id]/sections.json` using at least a valid `name`, `description`, and "closing" `sectiontype`
 
 ## Update Proposal
 
