@@ -91,6 +91,16 @@ Attribute | Type | Info | Example
 ]
 ```
 
+## Get Proposal Stats
+
+* `GET /proposals/stats.json` will return proposal statistics for the account
+
+```json
+{
+  "total": 3
+}
+```
+
 ## Get Proposal
 
 * `GET /proposals/1.json` will get the proposal that has an `id` of 1
